@@ -46,3 +46,5 @@ logWrite(TransactionId tid, Page before,
 - ### 一个事务t，执行插入操作并回滚
 
 t.start()调用logXactionBegin()，调用insert（），调用t.abort（），然后调用flushAllPages()将修改内容刷盘，调用logAbort(t.getId())，在logAbort中调用rollback，在rollback中将旧数据刷盘，然后调用缓冲池的transactionComplete(t.getId(), false)。
+
+本质来说就是：当事务开始的时候调用logbegin，结束调用logcommit，回滚调用logabort，更新调用logwrite
