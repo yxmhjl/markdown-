@@ -3,3 +3,11 @@
 aq
 
 ![image-20241026154633121](C:\Users\hjl\AppData\Roaming\Typora\typora-user-images\image-20241026154633121.png)
+
+git init
+
+git add .
+
+git commit -m ""
+
+git push -u origin master/main
